@@ -18,11 +18,32 @@ def repeats_func():
 times=int(repeats_func())
 
 print("Tell us the unit of time after which you want to be remainded about the task ")
-t=input("Type 'S' for seconds, 'M' for minutes and 'H' for hours ")
 
+def unit_func():
+    unit=input("Type 'S' for seconds, 'M' for minutes and 'H' for hours ").upper()
+    if(unit=='S' or unit=='M' or unit =='H'):
+        pass
+    else:
+        print("Please Check your Time unit selection and enter again ⚠️")
+        unit_func()
 
+    t=int(input("Enter the Time for your selected unit to Soonze your alert 😉 "))
+
+    if(unit=='S'):
+        soonze=t
+        return soonze
+    elif(unit=='M'):
+        soonze=60*t
+        return soonze
+    elif(unit=='H'):
+        soonze=60*60*t
+        return soonze
+    else:
+        print("⚠️ Enter a valid time period Unit")
+        unit_func()
+soonze=unit_func()
 
 while (times>0):
-    time.sleep(3)
+    time.sleep(soonze)
     print(f"{name} !!!, it's time to {task}")
     times-=1
