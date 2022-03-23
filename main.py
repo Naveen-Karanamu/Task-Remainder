@@ -49,7 +49,7 @@ def new_task_repeat():
         print(f"{name} !!!, it's time to {task}")
         times-=1
         
-    new_task_assign=input("Type 'YES', if you want to assign a new task to be remainded. Or else type 'No', to exit 🤔 ").upper()
+    new_task_assign=input("Type 'YES', if you want to assign a new task to be remainder. Or else type 'No', to exit 🤔 ").upper()
     if(new_task_assign=="YES"):
         print(f"{name} you can assign a new task")
         new_task_repeat()
